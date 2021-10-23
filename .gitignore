@@ -1,2 +1,9 @@
 data/*
 !data/*.txt
+!data/sample.fa
+
+work/*
+*.log
+*.log*
+.nextflow/*
+nextflow
