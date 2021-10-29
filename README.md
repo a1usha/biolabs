@@ -54,3 +54,35 @@ Nextflow умеет строить отчеты о работе пайплайн
 <p align="center">
   <img src="./flowchart.png" />
 </p>
+
+---
+
+### Перенос bash скрипта в пайплайн Nextflow
+
+Реализованный пайплайн можно найти в `./nfpipelines/pipeline.nf`. Большим плюсом можно отметить автоматическое распараллеливание задач - процесс `runFastqc` может выполняться параллельно с остальными, так как не зависит от результатов выполнения других процессов (да и от него никто не зависит). В целом, поведение пайплайна ровно такое же, как и bash скрипта.
+
+Информация, выводимая во время работы пайплайна в `stdout`:
+```
+N E X T F L O W  ~  version 21.04.3
+Launching `nfpipelines/pipeline.nf` [admiring_hamilton] - revision: e46d35b56f
+executor >  local (6)
+[77/e22b20] process > runFastqc (2)  [100%] 2 of 2 ✔
+[fe/c5ded8] process > bwaIndex       [100%] 1 of 1 ✔
+[d2/7014b5] process > bwaMem         [100%] 1 of 1 ✔
+[bb/47f560] process > smtFlagstat    [100%] 1 of 1 ✔
+[d8/5a697f] process > extractQuality [100%] 1 of 1 ✔
+
+Not OK
+
+Completed at: 29-Oct-2021 14:01:02
+Duration    : 20m 19s
+CPU hours   : 0.6
+Succeeded   : 6
+```
+
+Визуализация пайплайна:
+<p align="center">
+  <img src="./final_pipeline.png" />
+</p>
+
+Отчет работы пайплайна можно посмотреть в `./final_report.html`
