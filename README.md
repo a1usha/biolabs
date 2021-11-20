@@ -1,4 +1,4 @@
-## Биоинформатика
+## Биоинформатика. Лабораторная работа 1
 
 Ссылка на прочтения: https://www.ncbi.nlm.nih.gov/sra/SRX12633907[accn]
 (WGS of Escherichia coli, ILLUMINA (Illumina MiSeq))
